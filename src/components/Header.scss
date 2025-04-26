@@ -1,0 +1,51 @@
+@import "../styles/globals.scss";
+
+
+
+.Header{
+    box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.5);
+    height: 70px;
+    z-index: 1000 !important;
+    background-color: $color-bg;
+    color: $color-text;
+
+    a{
+        font-size: $font-size-lg;
+        color: $color-text;
+        text-decoration: none;
+    }
+    
+    a:hover{
+        color: $color-primary-light;
+    }
+}
+
+.mobile-menu {
+    background-color: $color-bg;
+    position: fixed;
+    top: 69px; // chiều cao header
+    width: 100%;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000 !important;
+  
+    &.open {
+      max-height:max-content; // hoặc auto nếu muốn
+    }
+  
+    li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+    a{
+        font-size: $font-size-lg;
+        color: $color-text;
+        text-decoration: none;
+    }
+    
+    a:hover{
+        color: $color-primary-light;
+    }
+  }

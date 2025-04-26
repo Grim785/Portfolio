@@ -1,0 +1,23 @@
+@import '../../styles/globals.scss';
+
+.Projects {
+  padding-top: 70px !important;
+  z-index: 1 !important;
+  min-height: 100vh;
+  
+  h2 {
+    font-weight: bold;
+  }
+
+  .card {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+  }
+}

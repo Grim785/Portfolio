@@ -1,0 +1,16 @@
+@import '../styles/globals.scss';
+
+.ProjectCard {
+    background-color: $color-bg;    
+    color: $color-text-light;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) !important;
+
+    &:hover{
+        box-shadow: 0 0 20px rgba(238, 237, 237, 0.7) !important;
+    }
+
+    .img_projectcard{
+        height: 300px;
+        width: 100%;
+    }
+}

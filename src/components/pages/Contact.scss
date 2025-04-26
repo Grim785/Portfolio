@@ -1,0 +1,18 @@
+@import '../../styles/globals.scss';
+
+.Contact {
+    padding-top: 70px !important;
+    z-index: 1;
+    min-height: 100vh !important;
+
+    .contact-form-container {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .input-contact {
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3) !important;
+        color: $color-text-light;
+        background-color: $color-bg;
+    }
+}
+

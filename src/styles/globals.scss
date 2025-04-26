@@ -1,0 +1,50 @@
+// variables.scss
+
+$color-primary: #4ef0c7 !important;
+$color-primary-light: #b2fff0 !important;
+$color-bg: #303438 !important;
+$color-text: #62e2c6 !important;
+$color-text-light: #ffffff !important;
+$color-border: #dcdde1 !important;
+
+$font-main: 'Segoe UI', sans-serif;
+
+// _typography.scss
+
+$font-size-xxl: 3rem;      // 48px – Hero title
+$font-size-xl: 2.25rem;    // 36px – Section title
+$font-size-lg: 1.5rem;     // 24px – Subtitle, card heading
+$font-size-md: 1.125rem;   // 18px – Body text lớn
+$font-size-base: 1rem;     // 16px – Body chính
+$font-size-sm: 0.875rem;   // 14px – Phụ, form label
+$font-size-xs: 0.75rem;    // 12px – Ghi chú, footnote
+
+$line-height-base: 1.6;
+
+
+
+*{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-text-light;
+  font-family: $font-main ;
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  color: white;
+  border-radius: 8px;
+  border-color: $color-border;
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+}
+
+.text-highlight {
+  color: $color-text;
+}
