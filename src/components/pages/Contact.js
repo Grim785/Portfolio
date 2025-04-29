@@ -4,6 +4,7 @@ import './Contact.scss';
 
 
 class Contact extends Component {
+
   render() {
     return (
       <article className='row Contact justify-content-center align-items-center'>
@@ -12,7 +13,7 @@ class Contact extends Component {
             <h3 className='text-center'>Contact Info</h3>
             <form  className="contact-form">
               <div className="mb-3">
-                <label className="form-label mb-1">Họ và tên</label>
+                <label className="form-label mb-1">Fullname</label>
                 <input type="text" name="name" className="form-control bg-transparent input-contact border-0 p-1" required />
               </div>
               <div className="mb-3">
@@ -20,11 +21,11 @@ class Contact extends Component {
                 <input type="email" name="email" className="form-control bg-transparent input-contact border-0 p-1" required />
               </div>
               <div className="mb-3">
-                <label className="form-label mb-1">Chủ đề</label>
+                <label className="form-label mb-1">Title</label>
                 <input type="text" name="subject" className="form-control bg-transparent input-contact border-0 p-1" required />
               </div>
               <div className="mb-3">
-                <label className="form-label mb-1">Tin nhắn</label>
+                <label className="form-label mb-1">Message</label>
                 <textarea name="message" rows="5" className="form-control bg-transparent input-contact border-0 p-1" required></textarea>
               </div>
               <div className='d-flex justify-content-center'>

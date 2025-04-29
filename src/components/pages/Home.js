@@ -3,6 +3,21 @@ import "./Home.scss";
 import {Link} from "react-router-dom";
 
 class Home extends React.Component {
+  constructor(props) {
+
+    super(props);
+    this.state = {
+      admin: false,
+    };
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      this.setState({ admin: true });
+    }
+  }
+
   render() {
     return (
         <article className="home row">
