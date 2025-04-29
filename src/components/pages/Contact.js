@@ -15,7 +15,6 @@ class Contact extends Component {
       subject: formData.get('subject'),
       message: formData.get('message'),
     };
-    console.log("sdada")
   
     try {
       await axios.post('/contact', data); // URL API back-end xử lý gửi mail

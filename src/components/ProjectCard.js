@@ -1,7 +1,6 @@
 import React from "react";
 import "./ProjectCard.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import img from "../assets/images/1243419727481667686-1243473950709780520-b50b4768194455943ca0f1cf07fcf9af.gif";
 import withRouter from "../helpers/withRouter";
 import axios from "../helpers/axiosInstance";
 
@@ -22,7 +21,6 @@ class ProjectCard extends React.Component {
     }
 
     DeleteProject = (id) => {
-        console.log("Delete project with ID:", id);
         axios
           .delete(`/projects/${id}`)
           .then((response) => {
