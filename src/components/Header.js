@@ -36,8 +36,6 @@ class Header extends React.Component {
   render() {
     const { isOpen } = this.state
     const admin = localStorage.getItem('token') ? true : this.state.admin
-    console.log("Admin status:", admin);
-
 
     return (
       <>
@@ -51,7 +49,6 @@ class Header extends React.Component {
               <li className="px-3"><Link to="/about">About</Link></li>
               <li className="px-3"><Link to="/projects">Projects</Link></li>
               <li className="px-3"><Link to="/contact">Contact</Link></li>
-              <li className="px-3"><Link to="/login">Login</Link></li>
               {admin && (
               <li className="px-3">
                 <Link onClick={this.handleLogout}>Logout</Link>
@@ -75,7 +72,7 @@ class Header extends React.Component {
             <li className="py-2"><Link to="/projects" onClick={this.toggleMenu}>Projects</Link></li>
             <li className="py-2"><Link to="/contact" onClick={this.toggleMenu}>Contact</Link></li>
             {admin && (
-              <li className="py-2"><Link to="/login" onClick={this.toggleMenu}>Logout</Link></li>
+              <li className="py-2"><Link onClick={this.toggleMenu}>Logout</Link></li>
             )}
           </ul>
         </nav>

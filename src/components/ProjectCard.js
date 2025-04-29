@@ -3,7 +3,7 @@ import "./ProjectCard.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import img from "../assets/images/1243419727481667686-1243473950709780520-b50b4768194455943ca0f1cf07fcf9af.gif";
 import withRouter from "../helpers/withRouter";
-import axios from "axios";
+import axios from "../helpers/axiosInstance";
 
 class ProjectCard extends React.Component {
     constructor(props) {
@@ -24,7 +24,7 @@ class ProjectCard extends React.Component {
     DeleteProject = (id) => {
         console.log("Delete project with ID:", id);
         axios
-          .delete(`http://localhost:5000/api/projects/${id}`)
+          .delete(`/projects/${id}`)
           .then((response) => {
             console.log("Project deleted successfully:", response.data);
             // Gọi callback để cập nhật danh sách sau khi xóa thành công
@@ -58,7 +58,7 @@ class ProjectCard extends React.Component {
                     <div key={index} className="col-lg-6 col-12 p-2">
                         <div className="ProjectCard rounded-3 card h-100">
                             <div className="p-2">
-                                <img src={img} alt={project.title} className="img_projectcard img-fluid rounded-top" />
+                                <img src={project.imageUrl} alt={project.title} className="img_projectcard img-fluid rounded-top" />
                             </div>
                             <div className="card-body  p-2 d-flex flex-column justify-content-between">
                                 <h5 className="card-title">{project.title}</h5>

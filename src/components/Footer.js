@@ -16,13 +16,13 @@ class Footer extends React.Component {
                 <div className="mx-2"><FontAwesomeIcon icon={faEnvelope} /> nguyenvanvan7580@gmail.com</div>
               </div>
               <div className="d-flex align-items-center justify-content-center gap-3">
-                <a href="https://facebook.com/nguyenvanan" target="_blank" rel="noopener noreferrer" className="text-light">
+                <a href="https://www.facebook.com/Faizb785" target="_blank" rel="noopener noreferrer" className="text-light">
                   Facebook
                 </a>
                 <a href="https://linkedin.com/in/nguyenvanan" target="_blank" rel="noopener noreferrer" className="text-light">
                   LinkedIn
                 </a>
-                <a href="https://github.com/nguyenvanan" target="_blank" rel="noopener noreferrer" className="text-light">
+                <a href="https://github.com/Grim785" target="_blank" rel="noopener noreferrer" className="text-light">
                   GitHub
                 </a>
               </div>

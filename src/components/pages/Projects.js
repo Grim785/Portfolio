@@ -1,5 +1,6 @@
 import React from "react";
-import axios, { HttpStatusCode } from "axios";
+import { HttpStatusCode } from "axios";
+import axios from "../../helpers/axiosInstance";
 import "./Projects.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProjectCard from "../ProjectCard";
@@ -16,9 +17,8 @@ class Projects extends React.Component {
   componentDidMount() {
     // Gọi API để lấy danh sách dự án
     axios
-      .get("http://localhost:5000/api/projects") // Thay đổi URL này thành API thực tế của bạn
+      .get("/projects") // Thay đổi URL này thành API thực tế của bạn
       .then((response) => {
-        console.log("sdasdsa")
         this.setState({ projects: response.data });
       })
       .catch((error) => {

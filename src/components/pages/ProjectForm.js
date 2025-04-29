@@ -1,7 +1,7 @@
 import React from "react";
-import axios from "axios";
 import "./ProjectForm.scss";
 import withRouter from "../../helpers/withRouter"; // để dùng navigate nếu cần (mình sẽ hướng dẫn ở dưới)
+import axios from "../../helpers/axiosInstance";
 
 class ProjectForm extends React.Component {
   constructor(props) {
@@ -18,10 +18,9 @@ class ProjectForm extends React.Component {
   componentDidMount() {
     const { isEditMode, params  } = this.props;
     if (isEditMode && params.id) {
-      axios.get(`http://localhost:5000/api/projects/${params.id}`)
+      axios.get(`/projects/${params.id}`)
         .then(response => {
           const { title, description, technologies, imageUrl, link } = response.data;
-          console.log(response.data);
           this.setState({ title, description, technologies, imageUrl, link });
         })
         .catch(error => {
@@ -35,9 +34,10 @@ class ProjectForm extends React.Component {
     const { title, description, technologies, imageUrl, link } = this.state;
     const { isEditMode, params,navigate } = this.props; // Lấy projectId từ props nếu có (trong trường hợp edit)
     const projectData = {title, description, technologies, imageUrl, link};
+    console.log(projectData)
     if (isEditMode && params.id) {
       // Update
-      axios.put(`http://localhost:5000/api/projects/${params.id}`, projectData)
+      axios.put(`/projects/${params.id}`, projectData)
         .then(() => {
           alert("Cập nhật thành công!");
           navigate ("/projects");
@@ -48,7 +48,7 @@ class ProjectForm extends React.Component {
         });
     } else {
       // Add mới
-      axios.post(`http://localhost:5000/api/projects`, projectData)
+      axios.post(`/projects`, projectData)
         .then(() => {
           alert("Thêm mới thành công!");
           navigate ("/projects");

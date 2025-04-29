@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../helpers/axiosInstance";
 import React, { Component } from "react";
 import withRouter from "../../helpers/withRouter";
 
