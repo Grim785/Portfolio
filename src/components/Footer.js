@@ -1,8 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
-import { FaFacebook, FaPhoneAlt, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { faFacebook, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 class Footer extends React.Component {
   render() {
     return (
