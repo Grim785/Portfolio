@@ -19,9 +19,8 @@ class Login extends Component {
     e.preventDefault();
     const { navigate } = this.props;
     const { username, password } = this.state;
-    console.log("Đăng nhập với:", this.state);
   
-    axios.post("http://localhost:5000/api/login",
+    axios.post("/login",
       { username, password }, // body
       {
         headers: {
