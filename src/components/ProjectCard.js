@@ -59,7 +59,7 @@ class ProjectCard extends React.Component {
                                 <img src={project.imageUrl} alt={project.title} className="img_projectcard img-fluid rounded-top" />
                             </div>
                             <div className="card-body  p-2 d-flex flex-column justify-content-between">
-                                <h5 className="card-title">{project.title}</h5>
+                                <h4 className="card-title">{project.title}</h4>
                                 <p className="card-text mb-2">{project.description}</p>
                                 <div>
                                     <div className="mb-2">

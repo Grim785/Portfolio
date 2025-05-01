@@ -40,7 +40,7 @@ class Header extends React.Component {
     return (
       <>
         <header className="Header top-0 position-fixed w-100 d-flex align-items-center justify-content-between py-2 px-3 shadow start-0">
-          <div className="logo">MyPortfolio</div>
+          <Link to="/" className="logo">MyPortfolio</Link>
 
           {/* Menu chính cho desktop */}
           <nav className="d-none d-md-flex">
@@ -72,7 +72,7 @@ class Header extends React.Component {
             <li className="py-2"><Link to="/projects" onClick={this.toggleMenu}>Projects</Link></li>
             <li className="py-2"><Link to="/contact" onClick={this.toggleMenu}>Contact</Link></li>
             {admin && (
-              <li className="py-2"><Link onClick={this.toggleMenu}>Logout</Link></li>
+              <li className="py-2"><Link onClick={this.handleLogout}>Logout</Link></li>
             )}
           </ul>
         </nav>
