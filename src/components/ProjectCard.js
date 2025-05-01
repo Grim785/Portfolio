@@ -36,8 +36,8 @@ class ProjectCard extends React.Component {
     render() {
         const admin = localStorage.getItem("token") ? true : false;
         const { projects } = this.props;
-        if (!projects) {
-            return <div>Loading projects...</div>;
+        if (!projects|| projects.length===0) {
+            return <div>No Project</div>;
         }
 
         return (

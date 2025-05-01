@@ -1,4 +1,3 @@
-import socket from "../../helpers/socket";
 import React from "react";
 import axios from "../../helpers/axiosInstance";
 import "./Projects.scss";
@@ -15,18 +14,6 @@ class Projects extends React.Component {
 
     componentDidMount() {
         this.fetchProjects(); // Gọi API ban đầu
-
-        // Lắng nghe các sự kiện từ WebSocket
-        socket.on("projectAdded", this.handleProjectEvent);
-        socket.on("projectUpdated", this.handleProjectEvent);
-        socket.on("projectDeleted", this.handleProjectEvent);
-    }
-
-    componentWillUnmount() {
-        // Hủy lắng nghe khi component bị huỷ
-        socket.off("projectAdded", this.handleProjectEvent);
-        socket.off("projectUpdated", this.handleProjectEvent);
-        socket.off("projectDeleted", this.handleProjectEvent);
     }
 
     handleProjectEvent = () => {
@@ -59,7 +46,7 @@ class Projects extends React.Component {
                     <div className="container py-5">
                         <div className="row">
                             {!projects || projects.length === 0 ? (
-                                <div className="text-center fs-1 fw-bold">No Project</div>
+                                <div>Loading projects...</div>
                             ) : (
                                 <>
                                     <div className="col-12 text-center mb-4">
