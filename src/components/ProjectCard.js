@@ -9,6 +9,7 @@ class ProjectCard extends React.Component {
         super(props);
         this.state = {
             admin: false,
+            isLoading: true,
         };
     }
 
@@ -17,6 +18,7 @@ class ProjectCard extends React.Component {
         if (token) {
             this.setState({ admin: true });
         }
+        this.setState({isLoading:false})
     }
 
     DeleteProject = (id) => {
@@ -34,9 +36,10 @@ class ProjectCard extends React.Component {
     };
 
     render() {
+        const isLoading=this.state;
         const admin = localStorage.getItem("token") ? true : false;
         const { projects } = this.props;
-        if (!projects|| projects.length===0) {
+        if (!isLoading) {
             return <div>No Project</div>;
         }
 

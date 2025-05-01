@@ -21,8 +21,8 @@ class Projects extends React.Component {
         this.fetchProjects();
     };
 
-    fetchProjects = () => {
-        axios
+    fetchProjects = async() => {
+        await axios
             .get("/projects")
             .then((response) => {
                 this.setState({ projects: response.data });
@@ -45,7 +45,7 @@ class Projects extends React.Component {
                 <div className="col-12">
                     <div className="container py-5">
                         <div className="row">
-                            {!projects || projects.length === 0 ? (
+                            {!projects || projects.length===0 ? (
                                 <div>Loading projects...</div>
                             ) : (
                                 <>
