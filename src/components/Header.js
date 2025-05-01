@@ -40,7 +40,7 @@ class Header extends React.Component {
     return (
       <>
         <header className="Header top-0 position-fixed w-100 d-flex align-items-center justify-content-between py-2 px-3 shadow start-0">
-          <Link to="/" className="logo">MyPortfolio</Link>
+          <Link to="/" className="logo fs-5">MyPortfolio</Link>
 
           {/* Menu chính cho desktop */}
           <nav className="d-none d-md-flex">

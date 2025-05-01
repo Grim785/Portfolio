@@ -33,8 +33,11 @@ class ProjectForm extends React.Component {
     e.preventDefault(); // Ngăn chặn hành vi mặc định của form (reload trang)
     const { title, description, technologies, imageUrl, link } = this.state;
     const { isEditMode, params,navigate } = this.props; // Lấy projectId từ props nếu có (trong trường hợp edit)
+    if(typeof(technologies)=='string')
+    {
+      technologies.split(',')
+    }
     const projectData = {title, description, technologies, imageUrl, link};
-    console.log(projectData)
     if (isEditMode && params.id) {
       // Update
       axios.put(`/projects/${params.id}`, projectData)
