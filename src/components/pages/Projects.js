@@ -1,11 +1,8 @@
-import socket from "../../helpers/socket"; // nhớ thêm dòng này ở đầu file
 import React from "react";
 import axios from "../../helpers/axiosInstance";
 import "./Projects.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProjectCard from "../ProjectCard";
-
-
 
 
 class Projects extends React.Component {
