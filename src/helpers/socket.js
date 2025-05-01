@@ -1,6 +1,12 @@
-// src/helpers/socket.js
+// helpers/socket.js
 import { io } from "socket.io-client";
 
-const socket = io(process.env.REACT_APP_API_URL); // Đổi sang production nếu deploy
+// KHÔNG ép chỉ dùng websocket vì Render có thể từ chối
+const socket = io("https://portfolio-backend-dr8u.onrender.com", {
+  transports: ["polling", "websocket"], // fallback nếu WebSocket bị chặn
+  reconnection: true,
+  reconnectionAttempts: 5,
+  timeout: 20000,
+});
 
 export default socket;
