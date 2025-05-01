@@ -15,20 +15,8 @@ class Projects extends React.Component {
   componentDidMount() {
     // Gọi API ban đầu
     this.fetchProjects();
-  
-    // Lắng nghe các sự kiện từ WebSocket
-    socket.on("projectAdded", this.fetchProjects);
-    socket.on("projectUpdated", this.fetchProjects);
-    socket.on("projectDeleted", this.fetchProjects);
-  }
-  componentWillUnmount() {
-    // Hủy lắng nghe khi component bị huỷ
-    socket.off("projectAdded", this.fetchProjects);
-    socket.off("projectUpdated", this.fetchProjects);
-    socket.off("projectDeleted", this.fetchProjects);
   }
   
-  // Tách logic fetch project thành 1 hàm riêng
   fetchProjects = () => {
     axios
       .get("/projects")
