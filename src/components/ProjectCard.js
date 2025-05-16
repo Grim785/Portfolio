@@ -40,11 +40,11 @@ class ProjectCard extends React.Component {
     render() {
         const admin= localStorage.getItem("token") ? true : false;
         const { projects } = this.props;
-        if (!projects) {
-        return <div>Loading projects...</div>;
-    }
         return (
             <>  
+                {this.props.loading && (
+                    <div className="fs-1">Loading...</div>
+                )}
                 {admin && (
                     <div className="col-lg-6 col-12 p-2" onClick={() => this.props.navigate("/projects/add")}>
                         <div className="ProjectCard rounded-3 card h-100 d-flex flex-column justify-content-center align-items-center fs-3 fw-bold text-grey">

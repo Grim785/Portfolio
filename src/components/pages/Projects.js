@@ -10,6 +10,7 @@ class Projects extends React.Component {
     super(props);
     this.state = {
       projects: [],
+      loading: true,
     };
   }
   componentDidMount() {
@@ -21,7 +22,7 @@ class Projects extends React.Component {
     axios
       .get("/projects")
       .then((response) => {
-        this.setState({ projects: response.data });
+        this.setState({ projects: response.data , loading: false });
       })
       .catch((error) => {
         console.error("Có lỗi xảy ra khi lấy dữ liệu dự án:", error);
@@ -39,6 +40,7 @@ class Projects extends React.Component {
 
   render() {
     const projects = this.state.projects;
+    const loading = this.state.loading;
     return (
         <article className="Projects row">
           <div className="col-12">
@@ -52,7 +54,7 @@ class Projects extends React.Component {
                       My projects showcase my skills and passion for web development. Each project is a step in my journey as a developer, and I’m excited to share them with you.
                     </div>
                   </>
-                <ProjectCard projects={projects} onProjectDeleted={this.handleProjectDeleted} />
+                <ProjectCard projects={projects} onProjectDeleted={this.handleProjectDeleted} loading={loading}/>
               </div>
             </div>
           </div>
